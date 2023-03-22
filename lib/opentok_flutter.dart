@@ -19,7 +19,8 @@ class OpenTokFlutter implements OpenTokPlatformApi {
 
   /// Returns new state from platform side.
   @override
-  void onStateUpdate(ConnectionStateCallback connectionState) => onUpdate?.call(connectionState);
+  void onStateUpdate(ConnectionStateCallback connectionState) =>
+      onUpdate?.call(connectionState);
 
   /// Initiates a opentok session with the given [OpenTokConfig] value.
   Future<void> initSession() async {
@@ -61,6 +62,15 @@ class OpenTokFlutter implements OpenTokPlatformApi {
   Future<void> toggleVideo(bool enabled) async {
     try {
       return await _openTokHostApi.toggleVideo(enabled);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  /// On session cancelled from subscriber side
+  Future<void> onSubscriberCancelled(bool cancelled) async {
+    try {
+      return await _openTokHostApi.onSubscriberCancelled(cancelled);
     } catch (e) {
       rethrow;
     }

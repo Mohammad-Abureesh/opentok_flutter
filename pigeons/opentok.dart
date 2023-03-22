@@ -34,6 +34,8 @@ abstract class OpenTokHostApi {
 
   void toggleVideo(bool enabled);
 
+  void onSubscriberCancelled(bool cancel);
+
   void onPause();
 
   void onResume();
