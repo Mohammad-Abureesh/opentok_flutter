@@ -158,7 +158,7 @@ class OpentokFlutterPlugin : FlutterPlugin, OpenTok.OpenTokHostApi {
                 cleanUpPublisher()
             }
 
-            override fun onDisconnected(subscriberKit: SubscriberKit) {
+            override fun onDisconnected(publisherKit: PublisherKit) {
                 notifyFlutter(OpenTok.ConnectionState.LOGGED_OUT)
             }
 
