@@ -103,11 +103,6 @@ class OpenTokController extends ValueNotifier<OpenTokValue> {
     await _openTokFlutter?.toggleVideo(enabled);
   }
 
-  void onSubscriberCancelled(bool cancel) async {
-    value = value.copyWith(state: open_tok.ConnectionState.loggedOut);
-    await _openTokFlutter?.onSubscriberCancelled(cancel);
-  }
-
   /// Pauses the video session.
   ///
   /// Invoke it when the app goes to background with an active session.

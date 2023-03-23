@@ -67,15 +67,6 @@ class OpenTokFlutter implements OpenTokPlatformApi {
     }
   }
 
-  /// On session cancelled from subscriber side
-  Future<void> onSubscriberCancelled(bool cancelled) async {
-    try {
-      return await _openTokHostApi.onSubscriberCancelled(cancelled);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
   /// Pauses the session including camera & audio.
   ///
   /// Invoke this method whenever your app goes to background if there is an active session.
